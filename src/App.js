@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
-import Person from './Person/Person'
+import Person from './Person/Person';
 
-export default class App extends Component {
+
+
+class App extends Component {
   
     state = {
       person:[
@@ -37,6 +39,15 @@ export default class App extends Component {
   }
 
   render = () => {
+    let buttonStyle = {
+      borderRadius: '12px',
+      outlineStyle: 'none',
+      backgroundColor: 'rgb(91, 241, 45)',
+      ':hover': {
+        backgroundColor: 'lightblue',
+        color: 'black',
+      }
+    };
 
     let person = null;
 
@@ -52,14 +63,29 @@ export default class App extends Component {
                 change={this.nameChangeHandler.bind(this,person.id)}/>})
                 }
        </div>)
-    }
 
-    
-   return ( <div className="App">
+       buttonStyle.backgroundColor = 'red';
+       buttonStyle[':hover'] = {
+                                  backgroundColor: 'white',
+                                  color: 'black'}
+    }// end of render method
+
+    const styleParagraph=[];
+    if(this.state.person.length <= 2){styleParagraph.push('red')};
+    if(this.state.person.length <= 1){styleParagraph.push('bold')};
+
+
+
+   return ( 
+   <div className="App">
       <h1>Hi I am a react app </h1>
-      <button className='buttonStyle' onClick={this.toggleHandler}>Switch Name</button>
+      <p className={styleParagraph.join(' ')}>Pedro </p>
+      <button className='buttonStyle' style={buttonStyle} onClick={this.toggleHandler}>Switch Name</button>
       {person}
-    </div>)}
+    </div>)
+    
+  }
 }
 
+export default App;
 
