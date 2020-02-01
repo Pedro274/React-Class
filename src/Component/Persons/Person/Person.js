@@ -19,10 +19,8 @@ const StyleDiv = styled.div`
 const person = (props) => {
 
 return (
-    //<div className='Person'>
     <StyleDiv>
-        <p onClick={props.click}>I'm {props.name} I am {props.age} years old</p>
-        <p>{props.children}</p>
+        <p onClick={props.delete}>I'm {props.name} I am {props.age} years old</p>
         <input type='text' onChange={props.change} value={props.name}/>
     </StyleDiv>
 )};
