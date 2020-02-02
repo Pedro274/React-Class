@@ -9,5 +9,5 @@ const persons = (props) => props.persons.map(person => {
                     age={person.age}
                     key={person.id}
                     delete={() => props.delete(person.id)}
-                    change={(event)=> props.change(event,person.id)}/>})
+                    change={(event)=> props.change(person.id,event)}/>})
 export default persons;

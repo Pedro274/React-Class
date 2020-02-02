@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import classes from './App.module.css';
 import Persons from '../../Component/Persons/Persons';
-
+import Cockpit from '../../Component/Cockpit/cockpit'
 
 
 
@@ -38,13 +37,6 @@ class App extends Component {
   }
 
   render = () => {
- 
-    const buttonClass = [classes.Button]
-    if(this.state.showPerson){buttonClass.push(classes.Red)}
-    
-    const styleParagraph=[];
-    if(this.state.person.length <= 2){styleParagraph.push(classes.red)};
-    if(this.state.person.length <= 1){styleParagraph.push(classes.bold)};
 
     let person = null;
     if(this.state.showPerson){
@@ -56,15 +48,18 @@ class App extends Component {
                </div>)
     }
 
-   return ( 
-      <div className={classes.App}>
-          <h1>Hi I am a react app </h1>
-          <p className={styleParagraph.join(' ')}>Pedro </p>
-          <button className={buttonClass.join(' ')} onClick={this.toggleHandler}>
-              Switch Name
-          </button>
-          {person}
-      </div>)
+   return (
+            <div>
+              <Cockpit 
+              title= {this.props.title}
+              toggle={this.toggleHandler}  
+              showPerson={this.state.showPerson}
+              person={this.state.person}/>
+              {person}
+            </div>)
+       
+      
+     
   }
 }
 
