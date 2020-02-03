@@ -4,7 +4,7 @@ import Cockpit from '../../Component/Cockpit/cockpit'
 
 
 
-class App extends Component {
+export default class App extends Component {
   
   state = {
       person:[
@@ -63,5 +63,5 @@ class App extends Component {
   }
 }
 
-export default App;
+
 

@@ -19,7 +19,6 @@ const Cockpit = (props) => {
               Switch Name
           </button>
       </div>)
-
 }
 
 export default Cockpit;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Person.css';
 import styled from 'styled-components';
 
@@ -10,19 +10,16 @@ const StyleDiv = styled.div`
         padding: 16px;
         text-align: center;
         margin-top: 22px;
-
         @media (max-width: 500px) {
             width: 100%
         }
 `;
 
-const person = (props) => {
-
-return (
+export default class Person extends Component {
+render = () =>
     <StyleDiv>
-        <p onClick={props.delete}>I'm {props.name} I am {props.age} years old</p>
-        <input type='text' onChange={props.change} value={props.name}/>
+        <p onClick={this.props.delete}>I'm {this.props.name} I am {this.props.age} years old</p>
+        <input type='text' onChange={this.props.change} value={this.props.name}/>
     </StyleDiv>
-)};
+};
 
-export default person;
