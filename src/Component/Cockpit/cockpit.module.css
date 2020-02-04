@@ -15,18 +15,19 @@
     border: 1px solid blue;
     padding: 6px;
     cursor: pointer; 
+    outline: none;
     box-shadow: 0 0 12px black;
     border-radius: 12px;
-    outline-style: none;
-    background-color: green;
+    background-color: rgb(59, 185, 59);
   }
-  
+
   .Button:hover {
     background-color: lightgreen;
   }
     
   .Button.Red {
     background-color: red;
+    outline: none;
   }
   
   .Button.Red:hover {

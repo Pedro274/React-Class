@@ -16,18 +16,6 @@ const StyleDiv = styled.div`
 `;
 
 export default class Person extends Component {
-static getDerivedStateFromProps(props,state) {
-    console.log('[Person.js] shouldComponentUpdate')
-    return true
-}
-
-shouldComponentUpdate(nextProps, nextState) {
-    return true 
-}
-
-
-
-
 render = () =>
     <StyleDiv>
         <p onClick={this.props.delete}>I'm {this.props.name} I am {this.props.age} years old</p>
