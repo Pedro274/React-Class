@@ -15,13 +15,14 @@ export default class Persons extends Component {
         return true 
     }
 
-    getSnapshotBeforeUpdate(prevPrep, prevState) {
+    getSnapshotBeforeUpdate(prevProp, prevState) {
         console.log('[Person.js] getSnapshotBeforeUpdate')
-        return null
+        return {message: 'snapshot'}
     }
 
-    componentDidUpdate(){
-        console.log('[App] componentDidUpdate')
+    componentDidUpdate(prevProps, prevState, snapshot){
+        console.log('[Person.js] componentDidUpdate')
+        console.log(snapshot)
     }
 
         render = () => {

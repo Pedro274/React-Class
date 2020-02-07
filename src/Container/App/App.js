@@ -5,6 +5,32 @@ import Cockpit from '../../Component/Cockpit/cockpit'
 
 
 export default class App extends Component {
+
+  componentDidMount() {
+    console.log('[App] component will mount')
+  }
+
+  static getDerivedStateFromProps(props, state) {
+        console.log('[App.js] getDerivedStateFromProps')
+        return state
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log('[App.js] shouldComponentUpDate')
+        return true 
+    }
+
+    getSnapshotBeforeUpdate(prevProp, prevState) {
+        console.log('[App.js] getSnapshotBeforeUpdate')
+        return {message: 'snapshot'}
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot){
+        console.log('[App.js] componentDidUpdate')
+        console.log(snapshot)
+    }
+
+
   
   state = {
       person:[

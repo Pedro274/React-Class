@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import classes from './cockpit.module.css';
 
 
 const Cockpit = (props) => {
+    
+    useEffect(() => {
+        console.log('{[cockpit]} use effect' )
+    })
 
     const buttonClass = [classes.Button]
     if(props.showPerson){buttonClass.push(classes.Red)}
