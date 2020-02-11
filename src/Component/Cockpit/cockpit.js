@@ -3,17 +3,27 @@ import classes from './cockpit.module.css';
 
 
 const Cockpit = (props) => {
+
     
     useEffect(() => {
-        console.log('{[cockpit]} use effect' )
+        console.log('{[cockpit]} use effect')
+        setTimeout(() => {
+            alert('Saved data to cloud')
+        }, 1000) 
+    }); 
+    // this will run with componentDidMount and componentDidUpdate
+    // if you only want to use componentDidMount add an empty array as a second argument to use effect 
+    // if you want to run only when the component mount and when the prop for user state run pass props.person (aka the state)
+    useEffect(() => {
+        console.log('{[cockpit]} 2-use effect')
     })
 
     const buttonClass = [classes.Button]
     if(props.showPerson){buttonClass.push(classes.Red)}
     
     const styleParagraph=[];
-    if(props.person.length <= 2){styleParagraph.push(classes.red)};
-    if(props.person.length <= 1){styleParagraph.push(classes.bold)};
+    if(props.persons.length <= 2){styleParagraph.push(classes.red)};
+    if(props.persons.length <= 1){styleParagraph.push(classes.bold)};
 
     return (
         <div className={classes.Cockpit}>
@@ -25,4 +35,4 @@ const Cockpit = (props) => {
       </div>)
 }
 
-export default Cockpit;
+export default React.memo(Cockpit);

@@ -11,8 +11,7 @@ export default class Persons extends Component {
     // }
 
     shouldComponentUpdate(nextProps, nextState) {
-        console.log('[Person.js] shouldComponentUpDate')
-        return true 
+       return true
     }
 
     getSnapshotBeforeUpdate(prevProp, prevState) {
@@ -25,13 +24,12 @@ export default class Persons extends Component {
         console.log(snapshot)
     }
 
-        render = () => {
-        return this.props.persons.map(person => {
-        return <Person 
-                    name={person.name} 
-                    age={person.age}
-                    key={person.id}
-                    delete={() => this.props.delete(person.id)}
-                    change={(event)=> this.props.change(person.id,event)}/>})
-                }// end of render
+        render = () => this.props.persons.map(person => {
+            return <Person 
+                        name={person.name} 
+                        age={person.age}
+                        key={person.id}
+                        delete={() => this.props.delete(person.id)}
+                        change={(event)=> this.props.change(person.id,event)}/>})
+                   
 }

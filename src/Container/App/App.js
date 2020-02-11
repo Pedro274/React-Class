@@ -43,11 +43,10 @@ export default class App extends Component {
 
   nameChangeHandler = (id,event) => {
     const name = event.target.value;
-    const personNameToChangeIndex = this.state.person.findIndex(person => person.id === id);
     const copyStatePersonArray = [...this.state.person];
+    const personNameToChangeIndex = copyStatePersonArray.findIndex(person => person.id === id);
      copyStatePersonArray[personNameToChangeIndex].name = name;
-    this.setState({copyStatePersonArray})
-    
+    this.setState({copyStatePersonArray}) 
   }
 
   toggleHandler = () => {
@@ -80,7 +79,7 @@ export default class App extends Component {
               title= {this.props.title}
               toggle={this.toggleHandler}  
               showPerson={this.state.showPerson}
-              person={this.state.person}/>
+              persons={this.state.person}/>
               {person}
             </div>)
        
